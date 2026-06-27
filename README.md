@@ -64,7 +64,7 @@ package is CPU-only. Confirm GPU use with `ollama ps` (should show `100% GPU`).
 
 ```sh
 ghidrename                       # name every FUN_* in the open program
-ghidrename Client.exe            # same, asserting the open program is Client.exe
+ghidrename program.exe           # same, asserting which program is open
 ghidrename --max 30              # only the first 30 (good for a trial)
 ghidrename --dry-run --max 30    # propose names, change nothing
 ghidrename --model qwen2.5-coder:14b --threshold 0.75
