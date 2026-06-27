@@ -1,0 +1,23 @@
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - go build -o bin/ghidrename .
+  install:
+    cmds:
+      - go install .
+  run:
+    cmds:
+      - go run . {{.CLI_ARGS}}
+  lint:
+    cmds:
+      - golangci-lint run --config ~/.config/golangci-lint/config.yaml ./...
+  vuln:
+    cmds:
+      - govulncheck ./...
+  tidy:
+    cmds:
+      - go mod tidy
+  check:
+    deps: [lint, vuln]
